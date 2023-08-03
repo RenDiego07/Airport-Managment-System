@@ -7,6 +7,11 @@ public class Passanger extends Person implements Serializable
 {
     private String credit;
     private ArrayList<Ticket> baughtTickets=new ArrayList<>();
+    
+    public void updateTicket(Ticket newTicket, Ticket oldTicket) {
+    	baughtTickets.remove(oldTicket);
+    	baughtTickets.add(newTicket);
+    }
 
     public ArrayList<Ticket> getBaughtTickets() {
         return baughtTickets;

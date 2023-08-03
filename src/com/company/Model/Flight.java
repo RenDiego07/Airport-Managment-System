@@ -17,6 +17,20 @@ public class Flight implements Serializable ,Showable
     private String takeOffTime;
     private String flightPrice;
     private String flightFine;
+    
+    public void addPassanger(Passanger p) {
+    	this.passangers.add(p);
+    }
+    
+    public void removePassanger(Passanger p) {
+    	this.passangers.remove(p);
+    }
+    
+    public void notify(Ticket newTicket) {
+    	for(Passanger p : this.passangers) {
+    		p.updateTicket(newTicket, ticket);
+    	}
+    }
 
     public String getFlightPrice() {
         return flightPrice;
